@@ -2,7 +2,7 @@
 
 Docker image for front end CI build server
 
-## Sample usage in BitBucket Pipeline ##
+## Sample usage in BitBucket Pipeline for a static site ##
 
 ```
 image: originalfunction/front-end-build-server:latest
@@ -18,7 +18,7 @@ pipelines:
           - cd ..
           - echo ${SSH_KEY} | sed 's/\\n /\'$'\n/g' | sed 's/\\n//g' > key.pem
           - chmod 400 key.pem
-          - rsync -Prvz ./source/dist/ -e 'ssh -o StrictHostKeyChecking=no -i key.pem' ubuntu@${STAGING_SERVER}:/var/www/isitaip
+          - rsync -Prvz ./source/dist/ -e 'ssh -o StrictHostKeyChecking=no -i key.pem' ubuntu@${STAGING_SERVER}:/var/www/site
 ```
 bitbucket-pipelines.yml
 
