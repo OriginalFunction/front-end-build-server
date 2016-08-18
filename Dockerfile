@@ -32,4 +32,4 @@ RUN gem install compass-normalize
 RUN gem install susy
 RUN gem install breakpoint
 
-
+RUN npm install -g slack-cli
